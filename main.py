@@ -33,7 +33,7 @@ def list_patients():
 # Try calling the 2 functions below according to the appearance_prompt input!
 def assess_skin(skin):
     if skin == "1":
-        return no_dehydration
+        return some_dehydration
     elif skin == "2":
         return severe_dehydration
     else:
@@ -81,3 +81,32 @@ def main():
             return
 
 main()
+
+def test_assess_skin():
+    print(assess_skin("1") == some_dehydration)
+    print(assess_skin("2") == severe_dehydration)
+    print(assess_skin("3") == "")
+
+# test_assess_skin()
+
+def test_assess_eyes():
+    print(assess_eyes("1") == no_dehydration)
+    print(assess_eyes("2") == severe_dehydration)
+    print(assess_eyes("3") == "")
+
+# test_assess_eyes()
+    
+
+
+def test_assess_appearance():
+    print(assess_appearance())
+
+# test_assess_appearance()
+    
+def test_save_new_diagnosis():
+    save_new_diagnosis("Kelly", "No dehydration")
+    save_new_diagnosis("", "No dehydration")
+    save_new_diagnosis("Luna", "Severe dehydration")
+    save_new_diagnosis("Milo", "Some dehydration")
+
+# test_save_new_diagnosis()
