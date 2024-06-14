@@ -12,12 +12,19 @@ severe_dehydration = "Severe dehydration"
 some_dehydration = "Some dehydration"
 no_dehydration = "No dehydration"
 
+patients_and_diagnoses = [
+    "Bogar: No dehydration",
+    "Luna: Severe dehydration",
+    "Milo: Some dehydration"]
 
-
-
+def save_new_diagnosis(name, diagnosis):
+    final_diagnosis = name + " - " + diagnosis
+    patients_and_diagnoses.append(final_diagnosis)
+    print ("Final diagnosis:", final_diagnosis,"\n")
 
 def list_patients():
-    print("Listing patients and diagnoses")
+    for patient in patients_and_diagnoses:
+        print(patient)
 
 # Try calling the 2 functions below according to the appearance_prompt input!
 def assess_skin(skin):
@@ -49,7 +56,7 @@ def start_new_diagnosis():
     name = input(name_prompt)
     # Asks user to enter how the general appearance of the patient is
     diagnosis = assess_appearance()
-    print(name,diagnosis)
+    save_new_diagnosis(name, diagnosis)
 
 def main():
     # Executes the code within the while loop until user presses 'q'
